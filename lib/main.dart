@@ -14,7 +14,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'AnalyticsScreen',
-      home: AnalyticsScreen()
+        theme: ThemeData(
+            colorScheme: ColorScheme.fromSwatch()
+                .copyWith(
+                primary: AppColors.violet800,
+                secondary: AppColors.violet400)),
+        home: AnalyticsScreen()
     );
   }
 }
