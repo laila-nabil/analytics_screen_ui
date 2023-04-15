@@ -11,6 +11,7 @@ abstract class AppColors {
   static const Color neutral600 = Color.fromRGBO(82, 82, 82, 1.0);
   static const Color neutral700 = Color.fromRGBO(64, 64, 64, 1.0);
 
+  static const Color yellow50 = Color.fromRGBO(254, 248, 231, 1.0);
   static const Color yellow300 = Color.fromRGBO(247, 215, 110, 1.0);
   static const Color yellow500 = Color.fromRGBO(252, 195, 0, 1.0);
   static const Color yellow700 = Color.fromRGBO(204, 156, 0, 1.0);
@@ -18,8 +19,9 @@ abstract class AppColors {
   static const Color success50 = Color.fromRGBO(239, 250, 247, 1.0);
   static const Color success500 = Color.fromRGBO(55, 174, 139, 1.0);
 
-  static const Color pink50 = Color.fromRGBO(229, 64, 134, 1.0);
-  static const Color pink300 = Color.fromRGBO(235, 158, 190, 1.0);
+  static const Color pink300 = Color.fromRGBO(229, 64, 134, 1.0);
+  static const Color pink50 = Color.fromRGBO(235, 158, 190, 1.0);
+  static const Color pink100 = Color.fromRGBO(252, 242, 247, 1.0);
 
   static const Color error50 = Color.fromRGBO(253, 241, 242, 1.0);
   static const Color error500 = Color.fromRGBO(233, 83, 86, 1);

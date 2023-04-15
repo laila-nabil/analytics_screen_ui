@@ -1,3 +1,5 @@
+import 'package:analytics_screen_ui/core/app_assets.dart';
+import 'package:analytics_screen_ui/widgets/custom_card.dart';
 import 'package:flutter/material.dart';
 
 import '../core/app_colors.dart';
@@ -20,7 +22,6 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       drawer: Container(),
       appBar: AppBar(
@@ -45,8 +46,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
             onSelect: (selected) {
               setState(() {
                 selectedMenuBarItem = selected;
-                switch(selectedMenuBarItem){
-
+                switch (selectedMenuBarItem) {
                   case MenuBarItem.sales:
                     break;
                   case MenuBarItem.orders:
@@ -65,36 +65,101 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
               });
             },
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
+          Expanded(
             child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  SectionTitle(
-                    sectionTitle: "Sales",
-                    viewMore: () {},
-                  ),
-                  SectionTitle(
-                    key: ordersKey,
-                    sectionTitle: "Orders",
-                    viewMore: () {},
-                  ),
-                  SectionTitle(
-                    key: paymentsKey,
-                    sectionTitle: "Payments",
-                    viewMore: () {},
-                  ),
-                  SectionTitle(
-                    key: menuKey,
-                    sectionTitle: "Menu",
-                    viewMore: () {},
-                  ),
-                  SectionTitle(
-                    key: waiterKey,
-                    sectionTitle: "Waiter",
-                    viewMore: () {},
-                  ),
-                ],
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: Column(
+                  children: [
+                    SectionTitle(
+                      sectionTitle: "Sales",
+                      viewMore: () {},
+                    ),
+                    CustomCardA(
+                        title: "Revenue",
+                        subTitle: "Total revenue",
+                        total: 2000,
+                        customCardListItems: [
+                          CustomCardListItem(
+                              iconPath: AppAssets.clockGreen,
+                              iconColor: AppColors.success50,
+                              text: "Revenue per available seat hour",
+                              data: 2000),
+                          CustomCardListItem(
+                              iconPath: AppAssets.gridPink,
+                              iconColor: AppColors.error50,
+                              text: "Revenue per table",
+                              data: 2000)
+                        ]),
+                    SectionTitle(
+                      key: ordersKey,
+                      sectionTitle: "Orders",
+                      viewMore: () {},
+                    ),
+                    CustomCardA(
+                        title: "Orders",
+                        subTitle: "Total Orders",
+                        total: -50,
+                        customCardListItems: [
+                          CustomCardListItem(
+                              iconPath: AppAssets.bellYellowOutline,
+                              iconColor: AppColors.yellow50,
+                              text: "On going",
+                              data: 20),
+                          CustomCardListItem(
+                              iconPath: AppAssets.boxPink,
+                              iconColor: AppColors.pink100,
+                              text: "Delivery",
+                              data: 20),
+                          CustomCardListItem(
+                              iconPath: AppAssets.bagViolet,
+                              iconColor: AppColors.violet50,
+                              text: "Take away",
+                              data: 20),
+                        ]),
+                    SectionTitle(
+                      key: paymentsKey,
+                      sectionTitle: "Payments",
+                      viewMore: () {},
+                    ),
+                    SectionTitle(
+                      key: menuKey,
+                      sectionTitle: "Menu",
+                      viewMore: () {},
+                    ),
+                    SectionTitle(
+                      key: waiterKey,
+                      sectionTitle: "Waiter",
+                      viewMore: () {},
+                    ),
+                    CustomCardA(
+                        title: "Servings",
+                        subTitle: "",
+                        total: -650,
+                        customCardListItems: [
+                          CustomCardListItem(
+                              iconPath: AppAssets.sliderGreen,
+                              iconColor: AppColors.success50,
+                              text: "Tables served",
+                              data: 1234),
+                          CustomCardListItem(
+                              iconPath: AppAssets.peoplePink,
+                              iconColor: AppColors.pink100,
+                              text: "Guests per server per order",
+                              data: 1234),
+                          CustomCardListItem(
+                              iconPath: AppAssets.userSquareYellow,
+                              iconColor: AppColors.yellow50,
+                              text: "Per-person average",
+                              data: 1234),
+                          CustomCardListItem(
+                              iconPath: AppAssets.clockYellow,
+                              iconColor: AppColors.yellow50,
+                              text: "Average serving time",
+                              data: 1234),
+                        ]),
+                  ],
+                ),
               ),
             ),
           )
