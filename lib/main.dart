@@ -13,13 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'AnalyticsScreen',
+        title: 'AnalyticsScreen',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
-            colorScheme: ColorScheme.fromSwatch()
-                .copyWith(
-                primary: AppColors.violet800,
-                secondary: AppColors.violet400)),
-        home: AnalyticsScreen()
-    );
+            colorScheme: ColorScheme.fromSwatch().copyWith(
+                primary: AppColors.violet800, secondary: AppColors.violet400)),
+        home: AnalyticsScreen());
   }
 }
