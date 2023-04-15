@@ -28,6 +28,10 @@ class CustomMenuBar extends StatelessWidget {
           children: [
             MenuChip(title: "Today's", onTap: () {}, isHighlighted: true),
             MenuChip(
+                title: capitalize(MenuBarItem.sales.name),
+                onTap: () {onSelect(MenuBarItem.sales);},
+                isHighlighted: selectedMenuBarItem == MenuBarItem.sales),
+            MenuChip(
                 title: capitalize(MenuBarItem.orders.name),
                 onTap: () {onSelect(MenuBarItem.orders);},
                 isHighlighted: selectedMenuBarItem == MenuBarItem.orders),
